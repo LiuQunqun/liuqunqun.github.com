@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Our  Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	
+
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+			
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="comments">/**</span><br />
+				<span class="space"/><span class="comments">* 开心的日子，应该开心的过</span><br />
+				<span class="space"/><span class="comments">* 痛苦的日子，也要开心的过</span><br />
+				<span class="space"/><span class="comments">* 别怕，有我和你</span><br />
+				<span class="space"/><span class="comments">*/</span><br />
+				I i = <span class="keyword">new</span> I(<span class="string">"Liu Qunqun"</span>);<br />
+				Boy u = <span class="keyword">new</span> Boy(<span class="string">"Guo Liang"</span>);<br />
+				<span class="comments">// u 18年前，不管你怎样度过 </span><br />
+				i.love(u);<br />
+				<span class="comments">// u 从今以后，你要认认真真快快乐乐过</span><br />
+				u.accepted();<br />
+				<span class="comments">// 哪怕会有风雨，哪怕满路荆棘</span><br />
+				i.miss(u);<br />
+				<span class="comments">// 不管怎样，路上有 i 有 u </span><br />
+				i.takeCareOf(u);<br />
+				<span class="comments">// 前路慢慢，让 we 一起奔袭</span><br />
+				<span class="comments">// 不管风雨，青春值得 we 努力</span><br />
+
+
+				<span class="comments"><br />
+				<span class="comments">亮哥:</span><br />
+				<span class="comments">喜欢你并不是因为别的，而是你在那个时刻给了我别人给不了的感觉</span><br />
+				<span class="comments">一辈子不长，一定要找一个对的人</span><br />
+				<span class="comments">我知道我还不够好，但我一定会努力去改变的</span><br />
+				<span class="comments">余秋雨曾说过，你的过去我来不及参与，但你得未来我奉陪到底</span><br />
+				<span class="comments">话不多说，你明白就好</span><br />
+				<span class="comments">有些话，有机会慢慢告诉你</span><br />
+				
+				<!-- <span class="keyword">boolean</span> isHesitate = <span class="keyword">true</span>;<br />
+				<span class="keyword">while</span> (isHesitate) {<br />
+				<span class="placeholder"/>i.waitFor(u);<br />
+				<span class="placeholder"/><span class="comments">// I think it is an important decision</span><br />
+				<span class="placeholder"/><span class="comments">// and you should think it over.</span><br />
+				<span class="placeholder"/>isHesitate = u.thinkOver();<br />
+				}<br />
+				<!-- <span class="comments">// After a romantic wedding, we will live happily ever after.</span><br />
+				i.marry(u);<br /> 
+				</span><br />i.liveHappilyWith(u);<br /> -->
+			</div>
+			<div>
+				<img id="img_right" src=".\img\right.jpg" width="120" height="120" />
+			</div>
+			<div>
+				<img id="img_left" src=".\img\left.jpg" width="120" height="120" />
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						Happy  			Birthday   
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Have  You For Ever.<br/>
+						<div class="signature">- I</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			<a href="http://user.qzone.qq.com/1552654293?ptlang=2052">--我姓刘啊</a><br />
+			<!-- Copyright © 2011 <a href='http://hackerzhou.me'>hackerzhou.me</a> 2009-2011 -->
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2017, 06, 15);
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
